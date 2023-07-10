@@ -7,8 +7,25 @@
         public $rating;
 
         public function __constructor($title, $year, $genre, $time, $rating){
-            $this ->title = $title;
-        };
+            $this -> title = $title;
+            $this -> year = $year;
+            $this -> genre = $genre;
+            $this -> time = $time;
+            $this -> rating = $rating;
+
+        }
+
+        public function getMovieDetails(){
+            $string = "Movie: ".$this->$title.", Genre: ".$this->$genre." Year: ".$this->$year." Time: ".$this->$time.
+            " ".$this->$rating;
+             if($this->$rating != NULL ){
+                $string.= ", Rating:" .$this->$rating;
+             }
+             return $string;
+        }
+
+      
+  
     }
         
 ?>
