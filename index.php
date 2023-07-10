@@ -1,33 +1,45 @@
 <?php 
-    class Movie {
-        public $title;
-        public $year;
-        public $genere;
-        public $time;
-        public $rating;
 
-        public function __constructor($title, $year, $genre, $time, $rating){
-            $this -> title = $title;
-            $this -> year = $year;
-            $this -> genre = $genre;
-            $this -> time = $time;
-            $this -> rating = $rating;
+class Genre {
+    public $name;
 
-        }
-
-        public function getMovieDetails(){
-            $string = "Movie: ".$this->$title.", Genre: ".$this->$genre." Year: ".$this->$year." Time: ".$this->$time.
-            " ".$this->$rating;
-             if($this->$rating != NULL ){
-                $string.= ", Rating:" .$this->$rating;
-             }
-             return $string;
-        }
-
-      
-  
+    public function __construct($name){
+        $this->name = $name;
     }
+}
+
+
+class Movie {
+    public $title;
+    public $year;
+    public $genre;
+    public $time;
+    public $rating;
+
+    public function __construct($title, $year, $genre, $time, $rating){
+        $this->title = $title;
+        $this->year = $year;
+        $this->genre = $genre;
+        $this->time = $time;
+        $this->rating = $rating;
+    }
+
+    public function getMovieDetails(){
+        $string = "Movie: ".$this->title.", Genre: ".$this->genre.", Year: ".$this->year.", Time: ".$this->time;
+        if($this->rating != NULL ){
+            $string .= ", Rating: " .$this->rating;
+        }
+        return $string;
+    }
+}
+
         
+    //CREAZIONE ISTANZE DELLA CLASSE
+
+    $pirati_dei_caraibi = new Movie ('Pirati dei Caraibi','2013', new Genre('Azione'), 180, "" );
+
+    var_dump($pirati_dei_caraibi)
+
 ?>
 
 
