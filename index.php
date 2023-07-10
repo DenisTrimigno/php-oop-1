@@ -16,12 +16,12 @@ class Movie {
     public $time;
     public $rating;
 
-    public function __construct($title, $year, $genre, $time, $rating){
+    public function __construct($title, $year, $genre, $time){
         $this->title = $title;
         $this->year = $year;
         $this->genre = $genre;
         $this->time = $time;
-        $this->rating = $rating;
+       
     }
 
     public function getMovieDetails(){
@@ -36,9 +36,11 @@ class Movie {
         
     //CREAZIONE ISTANZE DELLA CLASSE
 
-    $pirati_dei_caraibi = new Movie ('Pirati dei Caraibi','2013', new Genre('Azione'), 180, "" );
+    $pirati_dei_caraibi = new Movie ('Pirati dei Caraibi','2013', new Genre('Azione'), 180);
 
-    var_dump($pirati_dei_caraibi)
+    $pirati_dei_caraibi->rating = 8;
+
+    var_dump($pirati_dei_caraibi);
 
 ?>
 
